@@ -1,11 +1,13 @@
 import { AnimatePresence, motion } from "motion/react"
 import { useState } from "react"
+import { Credits } from "./components/credits"
 
 function App() {
   const [state, setState] = useState<'idle' | 'tmp' | 'sent' | 'hidden'>('idle')
 
   return (
     <section className="w-full h-dvh flex justify-center items-center">
+      <Credits />
       <AnimatePresence initial={false}>
         {state != 'hidden' && (
           <motion.div
